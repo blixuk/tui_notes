@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<title>{{ title }}</title>
+		<link rel="stylesheet" type="text/css" href="/static/style.css">
+	</head>
+	<body>
+
+	<div class=container">
+
+		<div>
+			<ul>
+				<input type="file" form="open-form" value="Open"/>
+				<input type="submit" form="text-form" value="Save"/>
+			</ul>
+		</div>
+
+		<div>
+			<form action="{{ url_for('submit') }}" method="post" id="text-form">
+				<textarea id="text-area" name="text">{{ text }}</textarea>
+			</form>
+		</div>
+
+		<form action="{{ url_for('open') }}" method="post" enctype="multipart/form-data" id="open-form"></form>
+
+	 </form>
+
+	</div>
+
+	</body>
+</html>
